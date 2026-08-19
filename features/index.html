@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features | AIDriven Bands</title>
+  <meta name="description" content="AIDriven Bands features: campaign scheduling, TikTok publishing, Instagram Reels, YouTube uploads, Spotify analytics and AI-assisted caption generation.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='14' cy='14' r='14' fill='%233B82F6'/><path d='M8 10 L14 7 L20 10 L20 18 L14 21 L8 18 Z' fill='rgba(255,255,255,0.15)' stroke='white' stroke-width='1.5'/><circle cx='14' cy='14' r='3' fill='white'/></svg>">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+:root {
+  --bg:          #070D1A;
+  --bg-card:     #0D1526;
+  --bg-muted:    #111827;
+  --fg:          #F9FAFB;
+  --fg-muted:    #9CA3AF;
+  --primary:     #3B82F6;
+  --primary-dim: #1D4ED8;
+  --accent-bg:   #172554;
+  --accent-fg:   #93C5FD;
+  --border:      #1E293B;
+  --radius:      0.625rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+}
+body { background: var(--bg); color: var(--fg); line-height: 1.6; min-height: 100vh }
+a { color: var(--primary); text-decoration: none }
+a:hover { text-decoration: underline }
+.site-header { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border) }
+.site-nav { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; padding: 0.8rem 2rem }
+.nav-brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 700; font-size: 0.95rem; color: var(--fg); text-decoration: none; margin-right: auto; white-space: nowrap }
+.nav-brand:hover { text-decoration: none }
+.nav-brand svg { width: 26px; height: 26px; flex-shrink: 0 }
+.nav-links { display: flex; align-items: center; gap: 0.1rem; list-style: none }
+.nav-link { color: var(--fg-muted); font-size: 0.875rem; padding: 0.4rem 0.75rem; border-radius: 6px; transition: color 0.15s, background 0.15s; white-space: nowrap }
+.nav-link:hover { color: var(--fg); background: rgba(255,255,255,0.06); text-decoration: none }
+.nav-link.active { color: var(--fg); background: rgba(255,255,255,0.06) }
+.nav-signin { color: var(--fg-muted); font-size: 0.8rem; margin-left: 0.5rem; padding: 0.35rem 0.7rem; border-radius: 6px; white-space: nowrap; border: 1px solid var(--border); transition: color 0.15s, border-color 0.15s }
+.nav-signin:hover { color: var(--fg); border-color: var(--fg-muted); text-decoration: none }
+.site-footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; background: var(--bg); margin-top: auto }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between }
+.footer-brand { font-size: 0.875rem; font-weight: 600; color: var(--fg) }
+.footer-brand span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--fg-muted); margin-top: 0.2rem }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.2rem }
+.footer-links a { color: var(--fg-muted); font-size: 0.8rem; padding: 0.3rem 0.6rem; border-radius: 5px; transition: color 0.15s }
+.footer-links a:hover { color: var(--accent-fg); text-decoration: none }
+.footer-copy { font-size: 0.75rem; color: var(--fg-muted); width: 100% }
+.page { display: flex; flex-direction: column; min-height: 100vh }
+.section { padding: 5rem 2rem }
+.section-alt { background: var(--bg-card) }
+.section-muted { background: var(--bg-muted) }
+.container { max-width: 1000px; margin: 0 auto }
+.section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-fg); margin-bottom: 0.75rem }
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 1.25rem }
+h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem }
+h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem }
+.lead { color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75; max-width: 680px; margin-bottom: 2rem }
+.muted { color: var(--fg-muted) }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 2rem }
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: calc(var(--radius) * 2); padding: 1.5rem }
+.card-icon { width: 40px; height: 40px; border-radius: var(--radius); background: var(--accent-bg); color: var(--accent-fg); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700 }
+.card h3 { color: var(--fg); margin-bottom: 0.4rem }
+.card p { color: var(--fg-muted); font-size: 0.875rem; line-height: 1.65 }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 2rem }
+.step { background: var(--bg-muted); border: 1px solid var(--border); border-radius: calc(var(--radius) * 2); padding: 1.5rem }
+.step-num { width: 32px; height: 32px; border-radius: var(--radius); background: var(--accent-bg); color: var(--accent-fg); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.875rem; margin-bottom: 1rem }
+.step h3 { color: var(--fg); margin-bottom: 0.4rem }
+.step p { color: var(--fg-muted); font-size: 0.85rem; line-height: 1.65 }
+.highlight-box { background: var(--accent-bg); border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent); border-radius: calc(var(--radius) * 2); padding: 2rem; margin: 2rem 0 }
+.highlight-box h3 { color: var(--accent-fg); margin-bottom: 0.75rem }
+.highlight-box p { color: var(--fg-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 0 }
+.highlight-box ul { color: var(--fg-muted); font-size: 0.9rem; padding-left: 1.4rem }
+.highlight-box li { margin-bottom: 0.4rem; line-height: 1.65 }
+.highlight-box strong { color: var(--accent-fg) }
+@media (max-width: 768px) {
+  .nav-links { display: none }
+  .site-nav { padding: 0.8rem 1.25rem }
+  .section { padding: 3rem 1.25rem }
+  .footer-inner { flex-direction: column; gap: 1rem }
+}
+  </style>
+</head>
+<body>
+<div class="page">
+
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="14" fill="#3B82F6"/>
+        <path d="M8 10 L14 7 L20 10 L20 18 L14 21 L8 18 Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="3" fill="white"/>
+      </svg>
+      AIDriven Bands
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/features" class="nav-link active">Features</a></li>
+      <li><a href="/support" class="nav-link">Support</a></li>
+      <li><a href="/privacy" class="nav-link">Privacy</a></li>
+      <li><a href="/terms" class="nav-link">Terms</a></li>
+    </ul>
+    <a href="https://dcnai.dgxn8n.cloud/app" class="nav-signin">Sign in &rarr;</a>
+  </nav>
+</header>
+
+<main style="flex:1">
+
+<!-- HEADER -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Platform features</div>
+    <h1>Everything you need to manage<br>a music release</h1>
+    <p class="lead">
+      AIDriven Bands covers the full publishing workflow — from uploading media and writing captions
+      to scheduling, reviewing, and confirming every post before it goes live.
+    </p>
+  </div>
+</section>
+
+<!-- CAMPAIGN MANAGEMENT -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label">Campaigns</div>
+    <h2>Release campaign management</h2>
+    <p class="lead">
+      Group all content for a single release into one campaign. Manage teasers, release day posts,
+      lyric videos and follow-up content together, across all connected platforms.
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">IG</div>
+        <h3>Instagram — Feed, Reels, Stories</h3>
+        <p>Post images, video Reels and temporary Stories. Connect via Meta Graph API with page-level access tokens. Captions, hashtags, and scheduled publish time configured per post.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">TT</div>
+        <h3>TikTok — Video publishing</h3>
+        <p>Publish video posts to a connected TikTok account via TikTok Content Posting API. Full control over caption, hashtags, commercial content declaration, and publish time.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">YT</div>
+        <h3>YouTube — Video uploads</h3>
+        <p>Upload videos to a connected YouTube channel via YouTube Data API v3. Configure title, description, tags, visibility and scheduled publish time from the dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIKTOK PUBLISHING — EXPLICIT FLOW FOR REVIEWER -->
+<section class="section" id="tiktok-publishing">
+  <div class="container">
+    <div class="section-label">TikTok integration</div>
+    <h2>How TikTok publishing works</h2>
+    <p class="lead">
+      AIDriven Bands uses TikTok's official Content Posting API. Artists connect their own TikTok
+      account through TikTok's OAuth authorization flow — the platform never stores TikTok credentials.
+    </p>
+
+    <div class="highlight-box">
+      <h3>What the TikTok integration does</h3>
+      <ul>
+        <li>Connects the artist's TikTok account via <strong>official OAuth 2.0 authorization</strong> — the user logs in to TikTok directly, not through this platform</li>
+        <li>Stores only the resulting <strong>access token and refresh token</strong>, encrypted at rest with AES-256-GCM</li>
+        <li>Reads the account identifier required to address API calls</li>
+        <li>Reads post status after publication to confirm successful delivery</li>
+      </ul>
+      <p style="margin-top:1rem">No follower data, DMs, analytics, or any other TikTok user information is accessed or stored.</p>
+    </div>
+
+    <div class="steps" style="margin-top:2.5rem">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Connect your TikTok account</h3>
+        <p>From the band settings page, click "Connect TikTok". You are redirected to TikTok's official OAuth page to grant publishing permission. AIDriven Bands stores the resulting access token only.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Upload your video</h3>
+        <p>Create a new campaign and upload your video file (up to 200 MB). The file is held on the server until the scheduled publish time, then deleted after successful publication.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Write caption and hashtags</h3>
+        <p>Enter your caption manually or use the optional AI-assisted caption generator. Add hashtags and configure TikTok-specific settings for the post.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Declare commercial content</h3>
+        <p>The TikTok publishing form includes an explicit commercial content declaration field. If the video contains branded content or paid promotion, the operator selects the appropriate disclosure option before confirming the post.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h3>Set publish time</h3>
+        <p>Choose to publish immediately or schedule for a future date and time. The scheduler runs every minute and dispatches due posts automatically.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <h3>Review and confirm</h3>
+        <p>Before the post goes live, a review screen shows all details — video preview, caption, hashtags, commercial content flag, and scheduled time. The operator explicitly confirms. Nothing is published without confirmation.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;padding:1.25rem 1.5rem;background:var(--bg-muted);border:1px solid var(--border);border-radius:calc(var(--radius)*2)">
+      <p class="muted" style="font-size:0.875rem;line-height:1.7">
+        <strong style="color:var(--fg)">Revoking access:</strong>
+        Artists can revoke TikTok access at any time from their TikTok account under
+        <em>Settings &amp; Privacy &rarr; Security &rarr; Authorized apps</em>.
+        Access can also be removed directly from the band settings page in AIDriven Bands.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT TOOLS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label">Content tools</div>
+    <h2>Content creation and management</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">✍️</div>
+        <h3>AI-assisted captions</h3>
+        <p>Generate caption suggestions for each post using AI. The operator reviews, edits and approves every generated caption before it is used. Nothing is published without human review.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎬</div>
+        <h3>Lyric video generator</h3>
+        <p>Automatically generate lyric videos from uploaded audio and lyrics. Configurable fonts, colors and styles. Output is a video file ready for scheduling on any connected platform.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✂️</div>
+        <h3>Teaser clips</h3>
+        <p>Generate short teaser clips from a full video. The operator selects the segment and format; the platform renders the clip for use in Reels, TikTok, or Stories.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📁</div>
+        <h3>Media management</h3>
+        <p>Upload and organize media assets per release — images, audio files and videos. Files are stored securely until the scheduled post is published, then removed from the server.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYTICS -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Analytics</div>
+    <h2>Performance tracking across platforms</h2>
+    <p class="lead">
+      After each post is published, the dashboard aggregates engagement data from connected platforms
+      alongside streaming metrics for a complete view of release performance.
+    </p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Social engagement</h3>
+        <p>Reach, impressions, plays, likes, comments and shares — pulled from the Meta Graph API, TikTok API and YouTube Analytics API after each post is live.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎧</div>
+        <h3>Spotify for Artists</h3>
+        <p>Monthly listeners, stream counts, saves and playlist adds — read-only from the Spotify for Artists account linked to each band. Updated daily.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎙️</div>
+        <h3>Last.fm scrobbles</h3>
+        <p>Total play counts from Last.fm for each registered artist, correlated with release dates and campaign activity to track organic listening growth.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📣</div>
+        <h3>Meta Ads correlation</h3>
+        <p>Connect Meta Ads data alongside organic post metrics to compare paid reach against streaming performance for a release campaign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      AIDriven Bands
+      <span>Music release publishing platform</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:diogocn@gmail.com">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 AIDriven Bands. All rights reserved.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

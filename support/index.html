@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support | AIDriven Bands</title>
+  <meta name="description" content="Get help with AIDriven Bands — contact support or browse the FAQ.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='14' cy='14' r='14' fill='%233B82F6'/><path d='M8 10 L14 7 L20 10 L20 18 L14 21 L8 18 Z' fill='rgba(255,255,255,0.15)' stroke='white' stroke-width='1.5'/><circle cx='14' cy='14' r='3' fill='white'/></svg>">
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+:root {
+  --bg:          #070D1A;
+  --bg-card:     #0D1526;
+  --bg-muted:    #111827;
+  --fg:          #F9FAFB;
+  --fg-muted:    #9CA3AF;
+  --primary:     #3B82F6;
+  --primary-dim: #1D4ED8;
+  --accent-bg:   #172554;
+  --accent-fg:   #93C5FD;
+  --border:      #1E293B;
+  --radius:      0.625rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+}
+body { background: var(--bg); color: var(--fg); line-height: 1.6; min-height: 100vh }
+a { color: var(--primary); text-decoration: none }
+a:hover { text-decoration: underline }
+.site-header { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border) }
+.site-nav { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.25rem; padding: 0.8rem 2rem }
+.nav-brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 700; font-size: 0.95rem; color: var(--fg); text-decoration: none; margin-right: auto; white-space: nowrap }
+.nav-brand:hover { text-decoration: none }
+.nav-brand svg { width: 26px; height: 26px; flex-shrink: 0 }
+.nav-links { display: flex; align-items: center; gap: 0.1rem; list-style: none }
+.nav-link { color: var(--fg-muted); font-size: 0.875rem; padding: 0.4rem 0.75rem; border-radius: 6px; transition: color 0.15s, background 0.15s; white-space: nowrap }
+.nav-link:hover { color: var(--fg); background: rgba(255,255,255,0.06); text-decoration: none }
+.nav-link.active { color: var(--fg); background: rgba(255,255,255,0.06) }
+.nav-signin { color: var(--fg-muted); font-size: 0.8rem; margin-left: 0.5rem; padding: 0.35rem 0.7rem; border-radius: 6px; white-space: nowrap; border: 1px solid var(--border); transition: color 0.15s, border-color 0.15s }
+.nav-signin:hover { color: var(--fg); border-color: var(--fg-muted); text-decoration: none }
+.site-footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; background: var(--bg); margin-top: auto }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between }
+.footer-brand { font-size: 0.875rem; font-weight: 600; color: var(--fg) }
+.footer-brand span { display: block; font-size: 0.75rem; font-weight: 400; color: var(--fg-muted); margin-top: 0.2rem }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.2rem }
+.footer-links a { color: var(--fg-muted); font-size: 0.8rem; padding: 0.3rem 0.6rem; border-radius: 5px; transition: color 0.15s }
+.footer-links a:hover { color: var(--accent-fg); text-decoration: none }
+.footer-copy { font-size: 0.75rem; color: var(--fg-muted); width: 100% }
+.page { display: flex; flex-direction: column; min-height: 100vh }
+.section { padding: 5rem 2rem }
+.section-alt { background: var(--bg-card) }
+.container { max-width: 1000px; margin: 0 auto }
+.section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-fg); margin-bottom: 0.75rem }
+h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 1.25rem }
+h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem }
+h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem }
+.lead { color: var(--fg-muted); font-size: 1.05rem; line-height: 1.75; max-width: 680px; margin-bottom: 2rem }
+.contact-card { display: flex; align-items: center; gap: 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: calc(var(--radius) * 2); padding: 1.5rem 2rem; margin-bottom: 1rem }
+.contact-icon { font-size: 1.5rem; flex-shrink: 0 }
+.contact-card h3 { color: var(--fg); margin-bottom: 0.25rem }
+.contact-card p { color: var(--fg-muted); font-size: 0.875rem }
+.contact-card a { color: var(--primary) }
+.faq { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; max-width: 720px }
+.faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: calc(var(--radius) * 2); padding: 1.25rem 1.5rem }
+.faq-q { font-weight: 600; font-size: 0.95rem; color: var(--fg); margin-bottom: 0.6rem }
+.faq-a { color: var(--fg-muted); font-size: 0.875rem; line-height: 1.7 }
+@media (max-width: 768px) {
+  .nav-links { display: none }
+  .site-nav { padding: 0.8rem 1.25rem }
+  .section { padding: 3rem 1.25rem }
+  .footer-inner { flex-direction: column; gap: 1rem }
+}
+  </style>
+</head>
+<body>
+<div class="page">
+
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="14" fill="#3B82F6"/>
+        <path d="M8 10 L14 7 L20 10 L20 18 L14 21 L8 18 Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.5"/>
+        <circle cx="14" cy="14" r="3" fill="white"/>
+      </svg>
+      AIDriven Bands
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/features" class="nav-link">Features</a></li>
+      <li><a href="/support" class="nav-link active">Support</a></li>
+      <li><a href="/privacy" class="nav-link">Privacy</a></li>
+      <li><a href="/terms" class="nav-link">Terms</a></li>
+    </ul>
+    <a href="https://dcnai.dgxn8n.cloud/app" class="nav-signin">Sign in &rarr;</a>
+  </nav>
+</header>
+
+<main style="flex:1">
+
+<section class="section">
+  <div class="container">
+    <div class="section-label">Help &amp; support</div>
+    <h1>How can we help?</h1>
+    <p class="lead">
+      For questions, account issues, or feedback about AIDriven Bands, reach out directly.
+      We typically respond within one business day.
+    </p>
+
+    <div class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <h3>Email support</h3>
+        <p>Send your question to <a href="mailto:diogocn@gmail.com">diogocn@gmail.com</a> — please include the band name and a description of the issue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <div class="faq-q">How do I connect my TikTok account?</div>
+        <div class="faq-a">
+          Go to the band settings page and click <strong>Connect TikTok</strong>.
+          You will be redirected to TikTok's official authorization page where you log in with your own TikTok credentials.
+          After granting permission, you are returned to AIDriven Bands with the connection active.
+          AIDriven Bands stores only the resulting access token — your TikTok password is never seen or stored.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I schedule a TikTok post?</div>
+        <div class="faq-a">
+          Create a new campaign, select TikTok as the platform, upload your video, write your caption, and
+          set a publish date and time. Review the post details on the confirmation screen — including the
+          commercial content declaration if applicable — then confirm. The platform will publish the video
+          at the scheduled time via the TikTok Content Posting API.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the commercial content declaration?</div>
+        <div class="faq-a">
+          TikTok requires creators to disclose when a video contains branded content or paid promotion.
+          The TikTok publishing form in AIDriven Bands includes a <strong>commercial content</strong> field
+          where you indicate whether the video is brand-organic, includes paid promotion, or neither.
+          This information is passed to TikTok via the API when the post is published.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I revoke TikTok access?</div>
+        <div class="faq-a">
+          You can revoke access from two places: in AIDriven Bands (band settings &rarr; Disconnect TikTok),
+          or directly in your TikTok account under <strong>Settings &amp; Privacy &rarr; Security &rarr; Authorized apps</strong>.
+          Revoking access stops all future publishing until you reconnect.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What happens if a scheduled post fails to publish?</div>
+        <div class="faq-a">
+          If a post fails (due to an expired token, platform error, or network issue), it is marked as
+          <strong>Failed</strong> in the campaign dashboard. No retry happens automatically — the operator
+          is expected to review the error, reconnect the account if needed, and reschedule the post manually.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is my data secure?</div>
+        <div class="faq-a">
+          All OAuth access tokens and session credentials are encrypted at rest using AES-256-GCM.
+          Encryption keys are stored separately from the database. The platform runs over HTTPS with
+          a Let's Encrypt TLS certificate. Media files are deleted from the server after a post is
+          successfully published.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I request deletion of my data?</div>
+        <div class="faq-a">
+          Send an email to <a href="mailto:diogocn@gmail.com">diogocn@gmail.com</a>
+          with the subject line <strong>Data deletion request</strong> and include the band name and
+          account email. We will process the request and confirm deletion within 30 days.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      AIDriven Bands
+      <span>Music release publishing platform</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/features">Features</a>
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:diogocn@gmail.com">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 AIDriven Bands. All rights reserved.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
